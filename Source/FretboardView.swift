@@ -372,8 +372,8 @@ public class FretView: FRView {
     let noteText = NSAttributedString(
       string: "\(note.note.type)",
       attributes: [
-        NSForegroundColorAttributeName: textColor,
-        NSFontAttributeName: FRFont.systemFont(ofSize: noteSize / 2)
+        NSAttributedStringKey.foregroundColor: textColor,
+        NSAttributedStringKey.font: FRFont.systemFont(ofSize: noteSize / 2)
       ])
 
     textLayer.alignmentMode = kCAAlignmentCenter
@@ -551,8 +551,8 @@ public class FretboardView: FRView, FretboardDelegate {
       label.textLayer.string = NSAttributedString(
         string: "\(fretboard.strings[index].type)",
         attributes: [
-          NSForegroundColorAttributeName: stringLabelColor,
-          NSFontAttributeName: FRFont.systemFont(ofSize: (min(stringLabelSize.width, stringLabelSize.height) * 2) / 3)
+          NSAttributedStringKey.foregroundColor: stringLabelColor,
+          NSAttributedStringKey.font: FRFont.systemFont(ofSize: (min(stringLabelSize.width, stringLabelSize.height) * 2) / 3)
         ])
       label.frame = CGRect(origin: position, size: stringLabelSize)
     }
@@ -580,8 +580,8 @@ public class FretboardView: FRView, FretboardDelegate {
         label.textLayer.string = NSAttributedString(
           string: "\(fretboard.startIndex + index)",
           attributes: [
-            NSForegroundColorAttributeName: fretLabelColor,
-            NSFontAttributeName: FRFont.systemFont(ofSize: (min(fretLabelSize.width, fretLabelSize.height) * 2) / 3)
+            NSAttributedStringKey.foregroundColor: fretLabelColor,
+            NSAttributedStringKey.font: FRFont.systemFont(ofSize: (min(fretLabelSize.width, fretLabelSize.height) * 2) / 3)
           ])
       }
       label.frame = CGRect(origin: position, size: fretLabelSize)
